@@ -2,8 +2,15 @@ import smtplib
 #Importing the smtplibb  library 
 import speech_recognition as sr
 #Import speech Recognition using PyAudio 
+#Import python text to speech
+import pyttsx3
 listener = sr.Recognizer()
-#Create a listening body hiding in the python code
+engine = pyttsx3.init()
+#Create a function called talk and its going to have the parameter text and it eill wait for the text and await foir it.
+def talk(text):
+    engine.say(text)
+    engine.runAndWait()
+
 
 
 
@@ -32,4 +39,10 @@ def send_email():
                     'Hey wanna play some poker tomorrow evening?'
 
 )
+
+def get_email_info():
+    talk('To whom you want to send the email to')
+
+get_email_info()
+
 
