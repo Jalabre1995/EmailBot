@@ -42,7 +42,7 @@ def send_email():
 
 def get_email_info():
     talk('To whom you want to send the email to')
+    name = get_Info()
+
 
 get_email_info()
-
-
