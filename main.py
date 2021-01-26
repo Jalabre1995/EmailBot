@@ -5,16 +5,21 @@ import speech_recognition as sr
 listener = sr.Recognizer()
 #Create a listening body hiding in the python code
 
+
+
 #The micriphone will be a source,where the python code is going to listen for your voice on the microphone.
 #And the information in the audio will return as a text and print that out using the goolge Api
-try:
-    with sr.Microphone() as source:
-        print('listening....')
-        voice = listener.listen(source)
-        info = listener.recognize_google(voice)
-        print(info)
-except:
-        pass
+def get_Info():
+    try:
+        with sr.Microphone() as source:
+            print('listening....')
+            voice = listener.listen(source)
+            info = listener.recognize_google(voice)
+            print(info)
+            return info.lower()
+    except:
+            pass
+        #Put the send email into a function . 
 def send_email():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     #tellingthe server trust transport security
