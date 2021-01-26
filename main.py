@@ -40,12 +40,13 @@ def send_email(receiver, subject, message):
     email['Subject'] = subject
     email.set_content(message)
     #Sending the email, there is going to be three parameters int his email 1: the person sending the email, 2: who you are sending it to, 3: the nessage.
-    server.sendmail(email)
+    server.send_message(email)
 
 
 
 email_list = {
-    
+    'josh': 'joshuaalabre@gmail.com',
+    'lisa': 'lisa@gmail.com'
 
 
 }
@@ -56,13 +57,13 @@ def get_email_info():
     reciever = email_list[name]
     print(reciever)
     talk('What is the subject of the email?')
-    subject = get_info()
+    subject = get_Info()
     print(subject)
     talk('Tell me the text in your email')
-    message = get_info()
+    message = get_Info()
     print(message)
 
-    send_email(reciever,subject,message )
+    send_email(reciever,subject,message)
 
 
 get_email_info()
